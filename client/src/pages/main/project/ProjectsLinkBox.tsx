@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { IProjectsData, IVisited } from "../../../interface/interface";
 import { fetchProjects, fetchVistited } from "../../../services/listData";
@@ -179,6 +179,8 @@ function VisitedBox({
   );
 }
 function ProjectsLinkBox() {
+  const { pathname } = useLocation();
+
   const { data: projectData } = useQuery<IProjectsData[]>(
     ["project"],
     () => fetchProjects(),
@@ -187,33 +189,22 @@ function ProjectsLinkBox() {
       refetchOnWindowFocus: false,
     }
   );
-
-  const [visitedData, setVisitedData] = useState<IVisited[]>([
+  const { data: visitedData, refetch } = useQuery<IVisited[]>(
+    ["visited"],
+    () => fetchVistited(),
     {
-      visited_awwwards_today: 0,
-      visited_awwwards_total: 0,
-      visited_airbnb_today: 0,
-      visited_airbnb_total: 0,
-      visited_coin_today: 0,
-      visited_coin_total: 0,
-      visited_kanban_today: 0,
-      visited_kanban_total: 0,
-      visited_myapp_today: 0,
-      visited_myapp_total: 0,
-      visited_netflix_today: 0,
-      visited_netflix_total: 0,
-    },
-  ]);
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+    }
+  );
   useEffect(() => {
-    const getVisited = async () => {
-      const visited = await fetchVistited();
-      setVisitedData(() => visited);
-    };
-    getVisited();
-  }, []);
+    refetch();
+  }, [refetch, pathname]);
+
   return (
     <>
       {projectData &&
+        visitedData &&
         projectData.map((data) => (
           <Box
             to={`/${data.projects_code}`}
