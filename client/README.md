@@ -1,5 +1,3 @@
-
-
 # awwwards-my-app
 
 ## awwwards-my-app 간단한 설명
@@ -10,7 +8,7 @@ awwward 웹사이트를 구경하던중 <br/>
 제가 만든 프로젝트들을 이렇게 웹 전시장처럼 만들어 놓으면 단순히 취업 목적이 아닌 <br/>
 재미와 자기개발 모두 챙길수 있을거란 생각이 들었습니다.<br/>
 그리고 제가 만든 프로젝트를 보실 인사담당자분들과 지인분들도 <br/>
-일일히 프로젝트 하나하나 링크 눌러가며 보지않고 편하게 볼수 있을거라 생각해<br/>
+일일히 프로젝트 하나하나 링크 눌러가며 보지않고 편하고 색다르게 볼 수 있을거라 생각해<br/>
 만들게 되었습니다. <br/>
 
 ### 특징
@@ -38,6 +36,8 @@ awwward 웹사이트를 구경하던중 <br/>
 <span><img src="https://img.shields.io/badge/windows-0078D6?style=flat-square&logo=windows&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/nodejs-339933?style=flat-square&logo=nodedotjs&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/mysql-4479A1?style=flat-square&logo=mysql&logoColor=white"/></span>
+
+<span><img src="https://img.shields.io/badge/jest-C21325?style=flat-square&logo=jest&logoColor=white"/></span> : 판단미스로 웹사이트 다만들고 배웠습니다. 앞으로 jest로 테스트하며 코딩해보겠습니다.
 
 
 ### 참고한 사이트들
