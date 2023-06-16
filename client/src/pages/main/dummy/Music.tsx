@@ -2,7 +2,7 @@ import styled from "styled-components";
 import newjeans from "../../../assets/img/main_img/newjeans.jpg";
 import NewJeans from "./boards/NewJeans";
 import AllSongs from "./boards/AllSongs";
-import all from "../../../assets/img/recommended_song/allsong.jpg";
+import allsongs from "../../../assets/img/recommended_song/allsong.jpg";
 
 const MusicWrapper = styled.div`
   width: 100%;
@@ -116,7 +116,12 @@ function Music() {
     <MusicWrapper>
       <MusicBox>
         <InnerMusicBox1>
-          <MusicImg src={newjeans} alt="newjeans" loading="lazy" decoding="async"/>
+          <MusicImg
+            src={newjeans}
+            alt="newjeans"
+            loading="lazy"
+            decoding="async"
+          />
           <MusicTextBox>
             <div>
               <h2>NewJeans</h2>
@@ -133,7 +138,7 @@ function Music() {
         </InnerMusicBox1>
         <InnerMusicBox2>
           <div>
-            <p>"an easy song to listen to"</p>
+            <p>"You can listen to recommended songs."</p>
           </div>
           <div>
             <p>Recommended List</p>
@@ -141,7 +146,12 @@ function Music() {
           <NewJeans />
         </InnerMusicBox2>
         <InnerMusicBox3>
-          <MusicImg src={all} alt="famous artist" loading="lazy" decoding="async"/>
+          <MusicImg
+            src={allsongs}
+            alt="famous artist"
+            loading="lazy"
+            decoding="async"
+          />
           <AllMusicTextBox>
             <div>
               <h2>"Subjective"</h2>

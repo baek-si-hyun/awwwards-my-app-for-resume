@@ -1,8 +1,8 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IProjectsData, IVisited } from "../../../interface/interface";
 import { fetchProjects, fetchVistited } from "../../../services/listData";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 const Box = styled(Link)`
@@ -179,7 +179,6 @@ function VisitedBox({
   );
 }
 function ProjectsLinkBox() {
-  const { pathname } = useLocation();
 
   const { data: projectData } = useQuery<IProjectsData[]>(
     ["project"],
@@ -199,7 +198,7 @@ function ProjectsLinkBox() {
   );
   useEffect(() => {
     refetch();
-  }, [refetch, pathname]);
+  }, [refetch]);
 
   return (
     <>

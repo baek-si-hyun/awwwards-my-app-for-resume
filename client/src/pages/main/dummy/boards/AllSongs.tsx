@@ -8,6 +8,7 @@ import styled from "styled-components";
 import React from "react";
 import { useRecoilState } from "recoil";
 import { all } from "../../../../atom";
+import MusicSet, { ButtonDiv, ControllBtn } from "./MusicSet";
 
 const Wrapper = styled.div`
   width: 90%;
@@ -25,7 +26,7 @@ const Board = styled.div`
   }
 `;
 
-const Card = styled.div<{ isDragging: boolean }>`
+export const Card = styled.div<{ isDragging: boolean }>`
   padding: 10px 2vw;
   background-color: ${(props) =>
     props.isDragging ? "#1d1d1d" : "transparent"};
@@ -41,6 +42,12 @@ const Card = styled.div<{ isDragging: boolean }>`
   }
   :hover {
     background-color: #1d1d1d;
+    ${ButtonDiv} {
+      opacity: 0.9;
+    }
+    ${ControllBtn} {
+      opacity: 1;
+    }
   }
   @media (max-width: 480px) {
     & {
@@ -58,7 +65,6 @@ const CardItem = styled.div`
   display: flex;
   align-items: center;
   gap: 7%;
-  line-height: 1.2;
   :nth-child(2) {
     padding-left: 20%;
   }
@@ -79,13 +85,15 @@ const CardItem = styled.div`
   }
 `;
 
-const ImgDiv = styled.div``;
+const ImgDiv = styled.div`
+  position: relative;
+`;
 
 const Img = styled.img`
   width: clamp(20px, 2.5vw, 80px);
-  object-fit: cover;
 `;
 const Tittle = styled.div``;
+
 function AllSongs() {
   const [list, setList] = useRecoilState(all);
   const onDragEnd = ({ destination, source }: DropResult) => {
@@ -100,6 +108,7 @@ function AllSongs() {
       });
     }
   };
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Wrapper>
@@ -127,6 +136,7 @@ function AllSongs() {
                             loading="lazy"
                             decoding="async"
                           />
+                          <MusicSet videoUrl={all.url} />
                         </ImgDiv>
                         <Tittle>
                           <span>{all.tittle}</span>
