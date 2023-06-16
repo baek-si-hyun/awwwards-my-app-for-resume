@@ -24,7 +24,6 @@ awwward 웹사이트를 구경하던중 <br/>
    그냥 저를 소개하는 느낌으로 만든게 몇개 있습니다.<br/>
 
 ### 사용한 스킬들
-
 <span><img src="https://img.shields.io/badge/html5-E34F26?style=flat-square&logo=html5&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/css3-1572B6?style=flat-square&logo=css3&logoColor=white"/></span>
 <span><img src="https://img.shields.io/badge/styledcomponents-DB7093?style=flat-square&logo=styledcomponents&logoColor=white"/></span>
