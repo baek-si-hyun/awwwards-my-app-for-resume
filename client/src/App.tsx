@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { motion, useScroll } from "framer-motion";
-import { Route, Routes } from "react-router-dom";
 import Contact from "./pages/contact/Contact";
 import Faqs from "./pages/faqs/Faqs";
 import Main from "./pages/main/Main";
 import Myapp from "./pages/project_router/ProjectMain";
 import ScrollToTop from "./ScrollToTop";
-import { useEffect, useState } from "react";
 import MusicPlayer from "./pages/main/dummy/boards/MusicPlayer";
+import { useEffect, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import { Route, Routes } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { all, newJeans, playingVideo, youtubeVideo } from "./atom";
 
@@ -29,7 +29,6 @@ const SctollBar = styled(motion.div)`
 `;
 function App() {
   const { scrollYProgress } = useScroll();
-  //최적화 예정
   const newJeansVideoList = useRecoilValue(newJeans);
   const allVideoList = useRecoilValue(all);
   const { videoUrl } = useRecoilValue(youtubeVideo);
